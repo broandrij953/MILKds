@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8" />
+<title>Проста тапалка</title>
+<style>
+  body { display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background: #222; color: #fff; font-family: Arial, sans-serif; }
+  #tapButton {
+    padding: 40px 80px;
+    font-size: 3rem;
+    border: none;
+    border-radius: 15px;
+    background: #4CAF50;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s;
+  }
+  #tapButton:active {
+    background: #388E3C;
+  }
+  #score {
+    position: fixed;
+    top: 20px;
+    font-size: 2rem;
+  }
+</style>
+</head>
+<body>
+
+<div id="score">Счёт: 0</div>
+<button id="tapButton">Тапай мене!</button>
+
+<script>
+  let score = 0;
+  const scoreDisplay = document.getElementById('score');
+  const tapButton = document.getElementById('tapButton');
+
+  tapButton.addEventListener('click', () => {
+    score++;
+    scoreDisplay.textContent = 'Счёт: ' + score;
+  });
+</script>
+
+</body>
+</html>
